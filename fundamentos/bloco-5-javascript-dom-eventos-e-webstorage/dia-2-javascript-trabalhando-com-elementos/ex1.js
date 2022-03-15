@@ -15,3 +15,21 @@ console.log(el1.nextSibling)
 console.log(el1.nextElementSibling)
 // Agora acesse o terceiroFilho a partir de pai .
 console.log(document.getElementById('pai').children[2])
+
+
+// parte 2
+// Crie um irmão para elementoOndeVoceEsta .
+let irmao = document.createElement('section')
+irmao.setAttribute('id', 'novoIrmao')
+document.getElementById('pai').appendChild(irmao)
+// Crie um filho para elementoOndeVoceEsta .
+let filho = document.createElement('p')
+filho.textContent = 'filho de elementoOndeVoceEsta criado'
+el1.appendChild(filho)
+// Crie um filho para primeiroFilhoDoFilho .
+let filho2 = document.createElement('p');
+filho2.textContent = 'filho do primeiro filho do filho criado'
+el1.firstElementChild.appendChild(filho2)
+// A partir desse filho criado, acesse terceiroFilho .
+let filhoCriado = el1.firstElementChild.firstElementChild
+console.log(filhoCriado.parentElement.parentElement.nextElementSibling)
