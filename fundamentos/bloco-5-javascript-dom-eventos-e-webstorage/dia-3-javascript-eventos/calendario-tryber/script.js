@@ -53,7 +53,7 @@ function createBtnHoliday(string) {
 createBtnHoliday("Feriados");
 
 //exercicio 3
-function changeBtnBackground() {
+function changeHolidaysBackground() {
   let btn = document.getElementById("btn-holiday");
   btn.addEventListener("click", () => {
     let feriados = document.getElementsByClassName("holiday");
@@ -66,7 +66,7 @@ function changeBtnBackground() {
     }
   });
 }
-changeBtnBackground();
+changeHolidaysBackground();
 
 // exercicio 4
 function createBtnFriday(string) {
@@ -76,3 +76,19 @@ function createBtnFriday(string) {
   document.getElementsByClassName("buttons-container")[0].appendChild(btn);
 }
 createBtnFriday("Sexta-feira");
+
+// exercicio 5
+function changeFridaysText() {
+  let btn = document.getElementById("btn-friday");
+  btn.addEventListener("click", () => {
+    let sextas = document.getElementsByClassName("friday");
+    for (each of sextas) {
+      if (each.innerText.length > 2) {
+        each.innerText = each.innerText.slice(9);
+      } else {
+        each.innerText = `Sextoou -${each.innerText}`;
+      }
+    }
+  });
+}
+changeFridaysText();
