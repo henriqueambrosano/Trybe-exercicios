@@ -106,3 +106,11 @@ function zoomDays() {
   }
 }
 zoomDays();
+
+// exercicio 7
+function createTask(string) {
+  let task = document.createElement("span");
+  task.textContent = string + " ";
+  document.getElementsByClassName("my-tasks")[0].appendChild(task);
+}
+createTask("Cozinhar");
