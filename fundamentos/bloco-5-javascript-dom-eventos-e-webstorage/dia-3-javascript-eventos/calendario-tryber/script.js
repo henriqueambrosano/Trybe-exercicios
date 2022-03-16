@@ -134,3 +134,21 @@ function checkTask() {
   }
 }
 checkTask();
+
+//exercicio 10
+function paintDay() {
+  let days = document.getElementsByClassName("day");
+  for (day of days) {
+    day.addEventListener("click", (e) => {
+      if (e.target.style.backgroundColor === "") {
+        let bgColor =
+          document.getElementsByClassName("selected")[0].style.backgroundColor;
+        e.target.style.backgroundColor = bgColor;
+      } else {
+        e.target.style.backgroundColor = "";
+      }
+    });
+  }
+}
+
+paintDay();
