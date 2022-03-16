@@ -92,3 +92,17 @@ function changeFridaysText() {
   });
 }
 changeFridaysText();
+
+// exercicio 6:
+function zoomDays() {
+  let days = document.getElementsByClassName("day");
+  for (day of days) {
+    day.addEventListener("mouseover", (e) => {
+      e.target.style.fontSize = "40px";
+    });
+    day.addEventListener("mouseout", (e) => {
+      e.target.style.fontSize = "20px";
+    });
+  }
+}
+zoomDays();
