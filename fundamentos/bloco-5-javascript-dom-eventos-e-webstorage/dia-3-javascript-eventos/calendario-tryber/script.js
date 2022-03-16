@@ -51,3 +51,21 @@ function createBtn(string) {
   document.getElementsByClassName("buttons-container")[0].appendChild(btn);
 }
 createBtn("Feriados");
+
+//exercicio 3
+function changeBtnBackground() {
+  let btn = document.getElementById("btn-holiday");
+  btn.addEventListener("click", () => {
+    let feriados = document.getElementsByClassName("holiday");
+    for (each of feriados) {
+      if (each.style.backgroundColor == "") {
+        each.style.backgroundColor = "red";
+      } else {
+        each.style.backgroundColor = "";
+      }
+    }
+  });
+}
+changeBtnBackground();
+
+
