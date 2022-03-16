@@ -44,13 +44,13 @@ function createDays() {
 }
 createDays();
 //exercicio 2
-function createBtn(string) {
+function createBtnHoliday(string) {
   let btn = document.createElement("button");
   btn.setAttribute("id", "btn-holiday");
   btn.innerText = string;
   document.getElementsByClassName("buttons-container")[0].appendChild(btn);
 }
-createBtn("Feriados");
+createBtnHoliday("Feriados");
 
 //exercicio 3
 function changeBtnBackground() {
@@ -68,4 +68,11 @@ function changeBtnBackground() {
 }
 changeBtnBackground();
 
-
+// exercicio 4
+function createBtnFriday(string) {
+  let btn = document.createElement("button");
+  btn.setAttribute("id", "btn-friday");
+  btn.innerText = string;
+  document.getElementsByClassName("buttons-container")[0].appendChild(btn);
+}
+createBtnFriday("Sexta-feira");
