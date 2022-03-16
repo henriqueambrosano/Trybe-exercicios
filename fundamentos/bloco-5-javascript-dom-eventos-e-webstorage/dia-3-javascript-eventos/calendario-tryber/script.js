@@ -114,3 +114,12 @@ function createTask(string) {
   document.getElementsByClassName("my-tasks")[0].appendChild(task);
 }
 createTask("Cozinhar");
+
+//exercicio 8
+function createSubtitle(cor) {
+  let subtitle = document.createElement("div");
+  subtitle.classList = "task";
+  subtitle.style.backgroundColor = cor;
+  document.getElementsByClassName("my-tasks")[0].appendChild(subtitle);
+}
+createSubtitle("red");
