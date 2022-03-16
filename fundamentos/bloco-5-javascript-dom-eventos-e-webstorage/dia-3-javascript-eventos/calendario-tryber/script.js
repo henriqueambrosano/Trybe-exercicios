@@ -23,20 +23,31 @@ createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
 // exercicio 1:
-const dezDaysList = [
-  29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-  21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
-];
-let ulDays = document.getElementById("days");
-for (num of dezDaysList) {
-  let li = document.createElement("li");
-  li.classList = "day";
-  if (num === 24 || num === 25 || num === 31) {
-    li.classList.add("holiday");
+function createDays() {
+  const dezDaysList = [
+    29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+    20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+  ];
+  let ulDays = document.getElementById("days");
+  for (num of dezDaysList) {
+    let li = document.createElement("li");
+    li.classList = "day";
+    if (num === 24 || num === 25 || num === 31) {
+      li.classList.add("holiday");
+    }
+    if (num === 4 || num === 11 || num === 18 || num === 25) {
+      li.classList.add("friday");
+    }
+    li.textContent = num;
+    ulDays.appendChild(li);
   }
-  if (num === 4 || num === 11 || num === 18 || num === 25) {
-    li.classList.add("friday");
-  }
-  li.textContent = num;
-  ulDays.appendChild(li);
 }
+createDays();
+//exercicio 2
+function createBtn(string) {
+  let btn = document.createElement("button");
+  btn.setAttribute("id", "btn-holiday");
+  btn.innerText = string;
+  document.getElementsByClassName("buttons-container")[0].appendChild(btn);
+}
+createBtn("Feriados");
