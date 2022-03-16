@@ -123,3 +123,14 @@ function createSubtitle(cor) {
   document.getElementsByClassName("my-tasks")[0].appendChild(subtitle);
 }
 createSubtitle("red");
+
+//exercicio 9
+function checkTask() {
+  let tasks = document.getElementsByClassName("task");
+  for (task of tasks) {
+    task.addEventListener("click", (e) => {
+      e.target.classList.toggle("selected");
+    });
+  }
+}
+checkTask();
