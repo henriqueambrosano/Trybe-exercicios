@@ -5,10 +5,8 @@ function setUserPreferences(bgColor, color, fontSize, lineHeight, fontFamily) {
   localStorage.setItem("lineHeight", lineHeight);
   localStorage.setItem("fontFamily", fontFamily);
 }
-localStorage.clear()
 
-setUserPreferences('gray', 'brown', '20px','2','arial')
-// console.log(document.getElementsByName("main")[0])
+setUserPreferences("gray", "brown", "20px", "2", "arial");
 
 function loadUserPreferencess() {
   let bgColor = localStorage.getItem("backgroundColor");
@@ -27,4 +25,4 @@ function loadUserPreferencess() {
   }
 }
 
-window.onload = loadUserPreferencess()
+window.onload = loadUserPreferencess();
