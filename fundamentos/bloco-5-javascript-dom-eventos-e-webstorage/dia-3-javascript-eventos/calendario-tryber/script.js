@@ -157,14 +157,22 @@ paintDay();
 function addAppointment() {
   let btnAdd = document.getElementById("btn-add");
   let taskList = document.getElementsByClassName("task-list")[0];
-  btnAdd.addEventListener("click", () => {
-    let inputValue = document.getElementById("task-input").value;
+  let inputField = document.getElementById("task-input");
+  inputField.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      btnAdd.click();
+    }
+  });
+
+  btnAdd.addEventListener("click", (e) => {
+    let inputValue = inputField.value;
     if (inputValue === "") {
       alert("Não é possivel adicionar um compromisso vazio");
     }
     let appointment = document.createElement("li");
     appointment.textContent = inputValue;
     taskList.appendChild(appointment);
+    inputField.value = "";
   });
 }
 
