@@ -82,11 +82,14 @@ function changeFridaysText() {
   let btn = document.getElementById("btn-friday");
   btn.addEventListener("click", () => {
     let sextas = document.getElementsByClassName("friday");
-    for (each of sextas) {
-      if (each.innerText.length > 2) {
-        each.innerText = each.innerText.slice(9);
+    for (sexta of sextas) {
+      if (sexta.innerText.length > 2) {
+        let ulDays = document.getElementById("days");
+        ulDays.innerHTML = "";
+        createDays();
+        break;
       } else {
-        each.innerText = `Sextoou -${each.innerText}`;
+        sexta.innerText = `Sextoou`;
       }
     }
   });
@@ -98,10 +101,10 @@ function zoomDays() {
   let days = document.getElementsByClassName("day");
   for (day of days) {
     day.addEventListener("mouseover", (e) => {
-      e.target.style.fontSize = "40px";
+      e.target.style.zoom = "200%";
     });
     day.addEventListener("mouseout", (e) => {
-      e.target.style.fontSize = "20px";
+      e.target.style.zoom = "100%";
     });
   }
 }
@@ -109,7 +112,7 @@ zoomDays();
 
 // exercicio 7
 function createTask(string) {
-  let task = document.createElement("span");
+  let task = document.createElement("p");
   task.textContent = string + " ";
   document.getElementsByClassName("my-tasks")[0].appendChild(task);
 }
