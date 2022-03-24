@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trybe Trip</title>
+</head>
+<body>
+    <header>
+        <h1>Formulário Trybe Trip</h1>
+    </header>
+    <main>
+        <form action="GET">
+            <label for="nome">Nome Completo: <input name="name" maxlength="40" minlength="10" type="text" id="nome"></label>
+            <br>
+            <label for="email">E-mail: <input name="email" maxlength="50" minlength="10" type="email" id="email"></label>
+            <br>
+            <label for="cidade"><input id='cidade' type="radio" name="destino" value="destino-preferido">Cidade</label>
+            <label for="campo"><input id='campo' type="radio" name="destino" value="destino-preferido">Campo</label>
+            <label for="praia"><input id='praia' type="radio" name="destino" value="destino-preferido">Praia</label>
+            <label for="montanhas"><input id='montanhas' type="radio" name="destino" value="destino-preferido">Montanhas</label>
+            <br>
+            <h3>Porque você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</h3>
+            <textarea  maxlength="500" name="porqueeu" id="whyme" cols="30" rows="10"></textarea>
+            <br>
+            <label for="data">Qual a melhor data para a viagem? <input placeholder="dd/mm/aaaa" type="text" id="data" name="data"></label>
+            <br>
+            <label for="concordo1"><input required name="concordo1" type="checkbox" id="concordo1">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe</label>
+            <br>
+            <label for="concordo2"><input required type="checkbox" id="concordo2" name="concordo2">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+            <br>
+            <button id="enviar" type="submit">Enviar</button>
+            <button id="apagar">Apagar</button>
+        </form>
+    </main>
+    <script src="./form.js"></script>
+</body>
+</html>
