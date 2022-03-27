@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: burlywood;
+}
+
+.container {
+  background-color: rgb(228, 200, 163);
+  width: 60%;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 5px 5px 30px black;
+}
+
+header p{
+    font-size: 0.8rem;
+    color: rgb(85, 83, 83);
+}
