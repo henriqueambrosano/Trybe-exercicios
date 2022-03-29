@@ -58,6 +58,7 @@ body {
 }
 
 .card-container {
+  flex-basis: 700px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -71,6 +72,7 @@ body {
   height: 150px;
   justify-content: center;
   margin: 10px;
+  flex-basis: 16%;
 }
 
 .aside-container {
