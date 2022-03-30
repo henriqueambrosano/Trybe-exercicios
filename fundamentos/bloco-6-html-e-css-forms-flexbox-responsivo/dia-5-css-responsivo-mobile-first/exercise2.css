@@ -1,0 +1,51 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+}
+h1 {
+  font-size: 20px;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+nav ul li {
+  margin-left: 10px;
+}
+.chapter {
+    margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(195, 193, 193);
+  line-height: 0.1;
+  justify-content: center;
+}
+i {
+  margin-left: 10px;
+}
+.aside-one h2 {
+}
+
+.aside-one ul {
+  transition: 0.5s;
+}
+
+.d-none {
+  display: none;
+}
