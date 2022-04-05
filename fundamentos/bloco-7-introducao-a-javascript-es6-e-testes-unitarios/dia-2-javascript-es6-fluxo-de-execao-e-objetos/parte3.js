@@ -40,3 +40,36 @@ const allLessons = {
   lesson3: Object.assign({}, lesson3),
 };
 console.log(allLessons);
+
+
+const countMathStudents = (obj) => {
+  let mathStudents = 0;
+  const myKeys = Object.keys(obj)
+  myKeys.forEach((key) => {
+    if(obj[key].materia === 'Matemática'){
+      mathStudents+= obj[key].numeroEstudantes
+    }
+  })
+  console.log(mathStudents)
+
+}
+countMathStudents(allLessons)
+
+const createReport = (obj, teacher) => {
+  const myReport = {
+    professor: '',
+    aulas: [],
+    estudantes: 0
+  }
+  const myKeys = Object.keys(obj);
+  myKeys.forEach((key) => {
+    if(obj[key].professor === teacher){
+      myReport.professor = teacher;
+      myReport.aulas.push(obj[key].materia);
+      myReport.estudantes += obj[key].numeroEstudantes 
+    }
+  })
+  console.log(myReport)
+}
+
+createReport(allLessons, 'Maria Clara')
