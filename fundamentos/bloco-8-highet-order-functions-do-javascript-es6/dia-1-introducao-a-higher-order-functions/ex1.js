@@ -1,6 +1,6 @@
 const nameEmail = (nome) => ({
   nomeCompleto: nome,
-  email: `${nome.split(' ').join('_')}@trybe.com`,
+  email: `${nome.replace(' ', '_').toLowerCase()}@trybe.com`,
 });
 
 const newEmployees = (myFunc) => {
