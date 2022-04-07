@@ -9,3 +9,9 @@ const newEmployees = (myFunc) => {
     return employees;
   };
 
+const checkResult = (bet, result) => bet === result ? 'Parabéns voce ganhou' : 'Tente novamente'
+
+const generateNum = (bet, myFunc) => {
+    const randomNum = Math.floor(Math.random()*6);
+    console.log(myFunc(bet, randomNum))
+}
