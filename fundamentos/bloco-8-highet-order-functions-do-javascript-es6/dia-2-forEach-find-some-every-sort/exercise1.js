@@ -64,8 +64,9 @@ const books = [
 // Adicione o código do exercício aqui:
 
 function authorBornIn1947(arr) {
-    // escreva aqui o seu código
-    const bornIn1947 = arr.find((people) => people.author.birthYear === 1947)
-    console.log(bornIn1947.author.name)
-  }
-authorBornIn1947(books)
+  // escreva aqui o seu código
+  const bornIn1947 = arr.find((people) => people.author.birthYear === 1947);
+  console.log(bornIn1947.author.name);
+}
+
+authorBornIn1947(books);
