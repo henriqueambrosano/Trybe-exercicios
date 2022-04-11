@@ -62,10 +62,6 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-const expectedResult = books.filter((book) => {
-  const nOfDots = book.author.name.match(/\./g);
-  if (nOfDots) return nOfDots.length === 3;
-})[0].name;
+const expectedResult = books.find((book) => book.author.name.match(/\./g).length === 3).name;
 
-// console.log(books[1].author.name.match(/\./g).length)
 console.log(expectedResult);
