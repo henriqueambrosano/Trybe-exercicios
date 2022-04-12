@@ -62,3 +62,13 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+
+const expectedResult = books.reduce((acc, book) => {
+  if (acc.name.length > book.name.length) {
+    return acc;
+  }
+  return book;
+  //   acc.name.length > book.name.length ? acc.name : book.name;
+});
+
+console.log(expectedResult);
