@@ -62,3 +62,10 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
+const expectedResult =
+  books.reduce((acc, idade) => {
+    acc += idade.releaseYear - idade.author.birthYear;
+    return acc;
+  }, 0) / books.length;
+
+console.log(expectedResult);
