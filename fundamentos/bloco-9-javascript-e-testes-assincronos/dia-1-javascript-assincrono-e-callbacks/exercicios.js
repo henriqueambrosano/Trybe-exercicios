@@ -38,5 +38,15 @@ const sendMarsTemperature = (callback, handleError) => {
   }
 }
 
-sendMarsTemperature(greet, handleError); 
+// sendMarsTemperature(greet, handleError); 
+
+
+const uppercase = (str, callback) => {
+  setTimeout(() => {
+    callback(str.toUpperCase());
+  }, 500);
+};
+
+
+module.exports = uppercase;
 
