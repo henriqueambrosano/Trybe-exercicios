@@ -78,7 +78,7 @@ function getPokemonDetails(filter, callback) {
 
     const messageFromProfOak = `Olá, seu pokémon é o ${name}, o tipo dele é ${type} e a habilidade principal dele é ${ability}`;
 
-    callback(null, messageFromProfOak);
+    callback(null, pokemon);
   }, 2000);
 }
 
