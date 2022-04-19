@@ -24,11 +24,19 @@ const getMarsTemperature = () => {
 const greet = (temperature) =>
   console.log(`Hi there! Curiosity here. Right now is ${temperature}ºC at Mars`);
 
+  const handleError = (errorReason) =>
+  console.log(`Error getting temperature: ${errorReason}`);
+
 // crie a função sendMarsTemperature abaixo
-const sendMarsTemperature = (callback) => {
+const sendMarsTemperature = (callback, handleError) => {
+  try{
     setTimeout(() => {
         callback(getMarsTemperature())
     }, messageDelay())
+  }catch(error){
+    handleError(error)
+  }
 }
 
-sendMarsTemperature(greet); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
+sendMarsTemperature(greet, handleError); 
+
