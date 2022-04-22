@@ -16,7 +16,7 @@ const mountList = (data) => {
     const top10 = data.filter((cripto, index) => index < 11);
     top10.forEach((coin) => {
       const li = document.createElement('li');
-      li.innerText = `${coin.id.toUpperCase()} (${coin.symbol}) : USD ${Number(
+      li.innerText = `${coin.id.toUpperCase()} (${coin.symbol}) : R$ ${Number(
         coin.priceUsd * brl
       ).toFixed(2)}`;
       criptoList.appendChild(li);
