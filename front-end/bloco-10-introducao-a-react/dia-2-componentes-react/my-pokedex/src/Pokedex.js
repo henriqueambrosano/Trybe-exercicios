@@ -13,7 +13,6 @@ class Pokedex extends React.Component {
       </section>
     );
   }
-}
-
+};
 
 export default Pokedex
