@@ -7,11 +7,15 @@ class Form extends React.Component {
     name: '',
     email: '',
     curiosity: '',
+    hasDog: false,
+    hasCat: false,
   };
 
-  handleInput = (event, state) => {
+  handleInput = ({ target }) => {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
-      [state]: event.target.value,
+      [name]: value,
     });
   };
 
@@ -21,7 +25,8 @@ class Form extends React.Component {
         <form>
           <label>Selecione sua cor favorita: </label>
           <select
-            onChange={(e) => this.handleInput(e, 'color')}
+            name='color'
+            onChange={this.handleInput}
             value={this.state.color}
           >
             <option>Red</option>
@@ -31,21 +36,45 @@ class Form extends React.Component {
           </select>
           <label>Nome: </label>
           <input
-            onChange={(e) => this.handleInput(e, 'name')}
+            name='name'
+            onChange={this.handleInput}
             type='text'
             value={this.state.name}
           ></input>
           <label>Email: </label>
           <input
-            onChange={(e) => this.handleInput(e, 'email')}
+            name='email'
+            onChange={this.handleInput}
             type='email'
             value={this.state.email}
           ></input>
           <label>Escreva uma curiosidade sobre você: </label>
           <textarea
-            onChange={(e) => this.handleInput(e, 'curiosity')}
+            name='curiosity'
+            onChange={this.handleInput}
             value={this.state.curiosity}
           ></textarea>
+          <label>
+            Meus pets:
+            <input
+              type='checkbox'
+              name='hasDog'
+              onChange={this.handleInput}
+              value={this.state.hasDog}
+            />
+            Dog
+            <input
+              type='checkbox'
+              name='hasCat'
+              onChange={this.handleInput}
+              value={this.state.hasCat}
+            />
+            Cat
+          </label>
+          <fieldset>
+            <label>Escolha uma foto de perfil: </label>
+            <input type='file' />
+          </fieldset>
         </form>
       </div>
     );
