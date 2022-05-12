@@ -1,9 +1,11 @@
 import React from 'react';
 import './Form.css';
+import Select from './Select';
+import Input from './Input';
 
 class Form extends React.Component {
   state = {
-    color: '',
+    color: 'Red',
     name: '',
     email: '',
     curiosity: '',
@@ -23,54 +25,18 @@ class Form extends React.Component {
     return (
       <div className='my-form'>
         <form>
-          <label>Selecione sua cor favorita: </label>
-          <select
-            name='color'
-            onChange={this.handleInput}
-            value={this.state.color}
-          >
-            <option>Red</option>
-            <option>Blue</option>
-            <option>Green</option>
-            <option>Black</option>
-          </select>
-          <label>Nome: </label>
-          <input
-            name='name'
-            onChange={this.handleInput}
-            type='text'
-            value={this.state.name}
-          ></input>
-          <label>Email: </label>
-          <input
-            name='email'
-            onChange={this.handleInput}
-            type='email'
-            value={this.state.email}
-          ></input>
+          <Select value={this.state.color} handleInput={this.handleInput}/>          
+          <Input name={'name'} value={this.state.name} handleInput={this.handleInput} handleError={this.handleError} label={'Nome: '} type={'text'}/>
+          <Input name={'email'} value={this.state.email} handleInput={this.handleInput} label={'Email: '} type={'email'}/>
           <label>Escreva uma curiosidade sobre você: </label>
           <textarea
             name='curiosity'
             onChange={this.handleInput}
             value={this.state.curiosity}
-          ></textarea>
-          <label>
-            Meus pets:
-            <input
-              type='checkbox'
-              name='hasDog'
-              onChange={this.handleInput}
-              value={this.state.hasDog}
-            />
-            Dog
-            <input
-              type='checkbox'
-              name='hasCat'
-              onChange={this.handleInput}
-              value={this.state.hasCat}
-            />
-            Cat
-          </label>
+          ></textarea>          
+          <label>Meus pets:</label>
+          <Input name={'hasDog'} value={this.state.hasDog} handleInput={this.handleInput} type={'checkbox'} pet={'Dog'}/>
+          <Input name={'hasCat'} value={this.state.hasCat} handleInput={this.handleInput} type={'checkbox'} pet={'Cat'}/>            
           <fieldset>
             <label>Escolha uma foto de perfil: </label>
             <input type='file' />
