@@ -56,14 +56,32 @@
       const actionRandom = {
         type: 'RANDOM'
       }
+
+      const NEXT_COLOR = (state) => {
+        const colorsLength = state.colors.length
+        const index = state.index < state.colors.length -1 ? state.index + 1 : 0
+        return index
+      }
+
+      const PREV_COLOR = (state) => {
+        const colorsLength = state.colors.length
+        const index = state.index === 0 ? state.colors.length -1 : state.index -1
+        return index
+      }
+      
+      const RANDOM_COLOR = (state) => {
+        const colors = [...state.colors, criarCor()];
+        const index = state.colors.length
+        return {colors, index}
+      }
       const reducer = (state = INITIAL_STATE, action) => {
         switch(action.type) {
           case 'NEXT':
-            return {...state, index: state.index < state.colors.length -1 ? state.index + 1 : 0}
+            return {...state, index: NEXT_COLOR(state) }
           case 'PREV':
-            return {...state, index: state.index === 0 ? state.colors.length -1 : state.index -1 }
+            return {...state, index: PREV_COLOR(state) }
           case 'RANDOM':
-            return {...state, colors: [...state.colors, criarCor()], index: state.colors.length}
+            return RANDOM_COLOR(state)
           default: return state
         }
       }
