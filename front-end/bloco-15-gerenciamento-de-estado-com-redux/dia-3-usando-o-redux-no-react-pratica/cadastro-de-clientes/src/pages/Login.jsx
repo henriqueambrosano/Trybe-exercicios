@@ -6,6 +6,7 @@ class Login extends React.Component {
   state = {
     user: '',
     password:'',
+    isLogged: true
   }
 
   handleChange = ({ target }) => {
@@ -14,15 +15,25 @@ class Login extends React.Component {
       [name]:value
     })
   }
+
+  login = () => {
+    const { sendLogin, history } = this.props;
+    const { user, password } = this.state;
+    if(user && password){
+      sendLogin(this.state)
+      history.push('/clients')
+    } else {
+      alert('Digite seu usuário e senha para continuar')
+    }
+  }
   
   render() {
-    const { sendLogin } = this.props
     return(
       <div>
         <form>
           <input type='text' placeholder='Digite seu usuário' name='user' onChange={this.handleChange}/>
           <input type='password' placeholder='Digite sua senha' name='password' onChange={this.handleChange}/>
-          <button type='button' onClick={() => sendLogin(this.state)}>Entrar</button>
+          <button type='button' onClick={this.login}>Entrar</button>
         </form>
       </div>
     )
