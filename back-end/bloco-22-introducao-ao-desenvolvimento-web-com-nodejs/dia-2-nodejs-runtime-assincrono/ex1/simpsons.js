@@ -1,5 +1,3 @@
-const { create } = require('domain');
-
 const fs = require('fs').promises;
 
 async function readAll() {
