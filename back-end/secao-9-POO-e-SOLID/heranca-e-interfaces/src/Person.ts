@@ -1,5 +1,3 @@
-import { InotasProva, InotasTrabalho } from "../interfaces/Inotas";
-
 class Person {
   constructor(private _name: string, private _birthDate: Date) {
     this.validateDate(_birthDate);
@@ -74,6 +72,14 @@ class Student extends Person {
 
   private validateWorksGrades(worksGrades: number[]) {
     if (worksGrades.length > 2) throw new Error('A pessoa estudante nao pode possuir mais de 2 notas de trabalho')
+  }
+
+  get enrollment() {
+    return this._enrollment;
+  }
+
+  set enrollment(value: string) {
+    this.validateEnrollment(value);
   }
 
 
