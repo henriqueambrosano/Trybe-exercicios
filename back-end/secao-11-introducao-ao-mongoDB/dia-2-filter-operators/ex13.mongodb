@@ -1,0 +1,10 @@
+use('MyMongoDb')
+
+db.superHeroes.find({$nor: [
+  {
+    'aspects.height': {$gt: 180}
+  },
+  {
+    race: 'Human'
+  }
+]})

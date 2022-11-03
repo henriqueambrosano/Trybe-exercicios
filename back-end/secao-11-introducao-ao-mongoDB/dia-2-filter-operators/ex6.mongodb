@@ -1,0 +1,3 @@
+use('MyMongoDb')
+
+db.superHeroes.countDocuments({'aspects.height': {$gte: 200}})

@@ -1,0 +1,3 @@
+use('MyMongoDb')
+
+db.superHeroes.find({'aspects.weight': {$lte:100, $gte: 80}, publisher: {$ne: 'DC Comics'}, race: {$in: ['Human', 'Mutant']}})

@@ -1,0 +1,3 @@
+use('MyMongoDb')
+
+db.superHeroes.find({'aspects.height': {$lt: 180}})

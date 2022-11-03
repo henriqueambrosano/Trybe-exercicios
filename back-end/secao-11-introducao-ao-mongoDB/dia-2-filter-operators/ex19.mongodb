@@ -1,0 +1,3 @@
+use('MyMongoDb')
+
+db.superHeroes.deleteMany({publisher: 'George Lucas'})
