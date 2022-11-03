@@ -1,0 +1,3 @@
+use('MyMongoDb')
+
+db.superHeroes.find({race: { $exists: 0 }})
