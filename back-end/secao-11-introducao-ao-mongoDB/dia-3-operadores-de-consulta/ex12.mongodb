@@ -1,0 +1,4 @@
+use('MyMongoDb')
+
+
+db.movies.find({ description: { $regex: /^The/ } });

@@ -1,0 +1,8 @@
+use('MyMongoDb')
+
+db.movies.find(
+  {
+      category: {$in: ['adventure', 'family']},
+      ratings: { $size: 4 },
+      imdbRating: {$gt: 7}
+  })
