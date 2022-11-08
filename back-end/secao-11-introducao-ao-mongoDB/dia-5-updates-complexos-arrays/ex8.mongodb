@@ -1,0 +1,18 @@
+use('MyMongoDb')
+db.movies.updateMany({title: 'Home Alone'},
+{
+  $addToSet: { cast: { $each: [
+    {
+    "actor": "Macaulay Culkin",
+    "character": "Kevin"
+  },
+  {
+    "actor": "Joe Pesci",
+    "character": "Harry"
+  },
+  {
+    "actor": "Daniel Stern"
+  }
+  ]}}
+})
+db.movies.find()
