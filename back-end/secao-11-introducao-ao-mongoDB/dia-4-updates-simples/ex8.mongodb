@@ -1,0 +1,3 @@
+use('MyMongoDb')
+
+db.movies2.updateOne({title: 'Home Alone'}, { $min: { budget: 5}})
