@@ -1,0 +1,3 @@
+use('MyMongoDb')
+
+db.movies2.updateOne({title: 'Godzilla'}, { $max: { imdbRating: 8.6}, $set: {'category.1': 'thriller'}})

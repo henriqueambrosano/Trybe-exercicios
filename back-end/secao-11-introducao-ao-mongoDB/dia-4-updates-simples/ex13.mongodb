@@ -1,0 +1,4 @@
+use('MyMongoDb')
+
+db.movies2.updateOne({title: 'Home Alone'}, { $max: { imdbRating: 17}})
+db.movies2.updateOne({title: 'Batman'}, { $max: { imdbRating: 17}})

@@ -1,0 +1,3 @@
+use('MyMongoDb')
+
+db.movies2.updateOne({title: 'Batman'}, { $set: { imdbRating: 7.7}})
